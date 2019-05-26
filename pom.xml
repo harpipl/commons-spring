@@ -10,10 +10,11 @@
 
     <properties>
         <!-- language versions -->
-        <version.java>11</version.java>
+        <version.java>1.8</version.java>
 
         <!-- common library versions -->
         <version.lombok>1.18.6</version.lombok>
+        <version.modelmapper>2.3.4</version.modelmapper>
         <version.commons>1.0-SNAPSHOT</version.commons>
 
         <!-- plugin versions -->
@@ -23,7 +24,7 @@
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
-        <version>1.5.9.RELEASE</version>
+        <version>2.1.5.RELEASE</version>
     </parent>
 
     <dependencies>
@@ -41,6 +42,11 @@
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
             <version>${version.lombok}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.modelmapper</groupId>
+            <artifactId>modelmapper</artifactId>
+            <version>${version.modelmapper}</version>
         </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>
@@ -69,7 +75,8 @@
                 <artifactId>maven-compiler-plugin</artifactId>
                 <version>${version.plugin.compiler}</version>
                 <configuration>
-                    <release>${version.java}</release>
+                    <source>${version.java}</source>
+                    <target>${version.java}</target>
                 </configuration>
             </plugin>
         </plugins>
